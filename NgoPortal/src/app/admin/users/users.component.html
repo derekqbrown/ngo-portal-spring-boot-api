@@ -1,0 +1,34 @@
+
+<div >
+    <h4 class="text-center">User Management</h4>
+</div>
+<div class="w-auto m-3 container">
+    <button class="btn btn-success px-3 float-end mb-2" routerLink="addUser">Add User</button>
+</div>
+
+<div class="container">
+    <table class="table table-striped table-bordered w-75 mx-auto">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        
+        <tbody *ngFor="let userList of [userService.userList];">
+            <tr *ngFor="let user1 of userList;" > 
+                <td>{{user1.firstName}}</td>
+                <td>{{user1.lastName}}</td>
+                <td>{{user1.email}}</td>
+                <td>{{user1.role}}</td>
+                <td><button (click) = "setUser(user1)" routerLink="updateUser">Update</button></td>
+                <td><button class="btn-danger" (click) = "deleteUser(user1.userId)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<router-outlet ></router-outlet>

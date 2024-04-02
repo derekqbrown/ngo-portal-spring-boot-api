@@ -1,0 +1,36 @@
+<div class="user-modal">
+    <div class = "user-modal-content">
+        <h4 class="text-center">Add User</h4>
+        <p class="text-center">All fields are required</p>
+        <div class="form-group">
+            <div>First Name</div>
+            <input class="form-control" [(ngModel)]="tempUser.firstName" required minlength ="1">
+        </div>
+        <div class="form-group">
+            <div>Last Name</div>
+            <input class="form-control" [(ngModel)]="tempUser.lastName" required minlength ="1">
+        </div>
+        <div class="form-group">
+            <div>Email</div>
+            <input type="email" class="form-control" [(ngModel)]="tempUser.email" required>
+        </div>
+        <div class="form-group">
+            <div>Password</div>
+            <input class="form-control" [(ngModel)]="tempUser.password" required minlength ="4" maxlength="20">
+        </div>
+        <div class="form-group">
+            <div>Role</div>
+            <select class="form-control" [(ngModel)]="tempUser.role" required>
+                <option value="User" [selected]="true">User</option>
+                <option value="Admin">Admin</option>
+            </select>
+        </div>
+        <div class="form-group m-2">
+            <button class="form-control btn btn-primary" (click)="postUser()">Create User</button>
+        </div>
+        <div class="form-group m-2">
+            <button class="form-control btn btn-danger" (click)="cancel()">Cancel</button>
+        </div>
+        
+    </div>
+</div>

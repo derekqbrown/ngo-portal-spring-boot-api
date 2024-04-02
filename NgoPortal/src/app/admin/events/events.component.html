@@ -1,0 +1,40 @@
+
+<div >
+    <h4 class="text-center">Event Management</h4>
+</div>
+<div class="w-auto m-3 container">
+    <button class="btn btn-success px-3 float-end mb-2" routerLink="createEvent">Create Event</button>
+</div>
+
+<div class="container">
+    <table class="table table-striped table-bordered w-75 mx-auto">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Is Currently Active?</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        
+        <tbody *ngFor="let eventList of [eventService.eventList];">
+            <tr *ngFor="let ev of eventList;" > 
+                <td>{{ev.title}}</td>
+                <td>{{ev.description}}</td>
+                <td>
+                    <span *ngIf="ev.active">Active</span> 
+                    <span *ngIf="!ev.active">Inactive</span>
+                </td>
+                <td>
+                    <button (click) = "updateEvent(ev)">
+                        <span *ngIf="ev.active">End Event</span>
+                        <span *ngIf="!ev.active">Activate</span>
+                    </button>
+                </td>
+                <td><button class="btn-danger" (click) = "deleteEvent(ev.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<router-outlet ></router-outlet>

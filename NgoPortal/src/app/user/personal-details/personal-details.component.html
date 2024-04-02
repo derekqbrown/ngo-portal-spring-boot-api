@@ -1,0 +1,49 @@
+
+<div class="w-25 mx-auto">
+    <div class="form-group">
+        <div>First Name</div>
+        <input class="form-control" [(ngModel)]="donationService.donation.firstName" required minlength ="1">
+    </div>
+    <div class="form-group">
+        <div>Last Name</div>
+        <input class="form-control" [(ngModel)]="donationService.donation.lastName" required minlength ="1">
+    </div>
+    <div class="form-group">
+        <div>Email Address</div>
+        <input class="form-control" type="email" [(ngModel)]="donationService.donation.email" required>
+    </div>
+
+    <div class="form-group">
+        <div>Phone</div>
+        <input class="form-control" [(ngModel)]="donationService.donation.phone">
+    </div>
+    <div class="form-group">
+        <div>Address</div>
+        <input class="form-control" [(ngModel)]="donationService.donation.address" >
+    </div>
+
+    <div class="form-group">
+        <div>City</div>
+        <input class="form-control" [(ngModel)]="donationService.donation.city" >
+    </div>
+    <div class="form-group">
+        <div>State/Province</div>
+        <input class="form-control" [(ngModel)]="donationService.donation.state">
+    </div>
+
+    <div class="form-group">
+        <div>Zip Code</div>
+        <input class="form-control" [(ngModel)]="donationService.donation.zipcode">
+    </div>
+    <div class="form-group">
+        <div>Country</div>
+        <input class="form-control" [(ngModel)]="donationService.donation.country">
+    </div>
+
+    <div>
+        <button class="btn btn-warning float-end m-2 mx-auto" (click)="continue()">Continue</button>
+
+        <button class="btn btn-warning float-end m-2 mx-auto" (click)="cancel()">Cancel</button>
+    </div>
+
+</div>

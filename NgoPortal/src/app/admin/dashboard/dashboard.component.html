@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-3 text-center text-bg-secondary admin-sidebar mx-auto p-4">
+        <nav class="">
+            <div class="top-padding">
+                <a routerLink="users" routerLinkActive="text-info" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                    User Management
+                </a>
+                <br><br>
+                <a routerLink="donations" routerLinkActive="text-info" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                    Donation Management
+                </a>
+                <br><br>
+                <a routerLink="events" routerLinkActive="text-info" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                    Event Management
+                </a>
+            </div>
+        
+        </nav>
+    </div>
+    
+    <div class="dash-content">
+        <p class="text-center">Welcome <span>{{this.userService.user.firstName}}</span></p>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+

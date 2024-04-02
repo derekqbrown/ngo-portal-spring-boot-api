@@ -1,0 +1,15 @@
+.admin-sidebar {
+  position:fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.top-padding{
+    padding-top: 20%;
+    
+}
+.dash-content{
+  padding-left:30%
+}

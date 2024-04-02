@@ -1,0 +1,25 @@
+<div >
+    <h4 class="text-center">Donation Management</h4>
+</div>
+
+<div class="container">
+    <table class="table table-striped table-bordered w-75 mx-auto">
+        <thead>
+            <tr>
+                <th>Donor Name</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        
+        <tbody *ngFor="let donationList of [donationService.donationList];">
+            <tr *ngFor="let donation of donationList;" > 
+                <td>{{donation.firstName}} {{donation.lastName}}</td>
+                <td>{{donation.donationDate | dateFormat}}</td>
+                <td>{{donation.amount | currency}}</td>
+                <td>{{donation.eventName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
